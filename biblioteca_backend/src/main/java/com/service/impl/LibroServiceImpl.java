@@ -38,6 +38,7 @@ public class LibroServiceImpl implements LibroService{
         Page<LibroEntity> result = libroRepository.obtenerListaActivos(PageRequest.of(page - 1, size));
 
         List<LibroResponse> elementos = new ArrayList<>();
+        
         for (LibroEntity libro : result.getContent()) {
             elementos.add(
                     LibroResponse.builder()
@@ -147,8 +148,5 @@ public class LibroServiceImpl implements LibroService{
         }
             response.setMensaje("Se elimino el libro correctamente");
         return response;
-    }
-
-    
-
+    }    
 }
