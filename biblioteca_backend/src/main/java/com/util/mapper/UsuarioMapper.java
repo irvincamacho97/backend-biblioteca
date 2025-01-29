@@ -4,7 +4,8 @@ import com.entity.UsuarioEntity;
 import com.model.request.UsuarioModificarRequest;
 import com.model.request.UsuarioRegistroRequest;
 import com.model.response.UsuarioResponse;
-import com.util.enums.EstatusUsuarioEnum;
+import com.util.enums.Estatus;
+
 
 public class UsuarioMapper {
 
@@ -17,7 +18,7 @@ public class UsuarioMapper {
 		usuarioEntity.setApellidoMaterno(request.getApellidoMaterno());
 		usuarioEntity.setContrasena(request.getContrasena());
 		usuarioEntity.setCorreo(request.getCorreo());
-		usuarioEntity.setEstatus(EstatusUsuarioEnum.ACTIVO.getEstatus());
+		usuarioEntity.setEstatus(Estatus.ACTIVO.getEstatus());
 		return usuarioEntity;
 	}
 
