@@ -9,7 +9,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.entity.ConsultaLibroEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.data.jpa.repository.Modifying;
 
 @Repository
 public interface ConsultaLibroRepository extends JpaRepository<ConsultaLibroEntity,Integer> {
@@ -24,5 +23,8 @@ public interface ConsultaLibroRepository extends JpaRepository<ConsultaLibroEnti
         @Param("idCatEstatus") Integer idCatEstatus,
         @Param("idConsulta") Integer idConsulta
     );
+
+    @Query("SELECT c FROM ConsultaLibroEntity c WHERE c.estatusConsulta.idEstatusConsulta = 2 AND c.usuarioEntity.idUsuario = :idUsuario")
+    Page<ConsultaLibroEntity> obtenerListaPrestadoToUsuaurio(Pageable pageable, Integer idUsuario);
     
 }
