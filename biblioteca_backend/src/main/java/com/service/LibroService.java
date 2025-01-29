@@ -18,6 +18,4 @@ public interface LibroService {
 
     abstract BaseResponse<String> eliminar(Integer idLibro);
 
-    
-
 }

@@ -49,6 +49,4 @@ public class LibroController extends BaseController {
         return libroService.eliminar(idLibro);
     }
 
-
-
 }
