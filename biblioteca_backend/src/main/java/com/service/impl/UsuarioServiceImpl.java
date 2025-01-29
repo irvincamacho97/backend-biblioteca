@@ -18,7 +18,7 @@ import com.model.response.UsuarioResponse;
 import com.repository.CatRolUsuarioRepository;
 import com.repository.UsuarioRepository;
 import com.service.UsuarioService;
-import com.util.enums.EstatusUsuarioEnum;
+import com.util.enums.Estatus;
 import com.util.mapper.PaginacionMapper;
 import com.util.mapper.UsuarioMapper;
 
@@ -36,7 +36,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Override
     public BaseResponse<PaginadoResponse<UsuarioResponse>> obtenerListaUsuario(int page, int size) {
-        log.info("busqueda request:{}");
+        log.info("obtenerListaUsuario:{}");
 
         BaseResponse<PaginadoResponse<UsuarioResponse>> response = new BaseResponse<>();
 
@@ -70,7 +70,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     @Override
     public BaseResponse<UsuarioResponse> obtener(Integer idUsuario) {
 
-        log.info("obtener request:{}");
+        log.info("obtener request:{}",idUsuario);
 
         BaseResponse<UsuarioResponse> response = new BaseResponse<>();
 
@@ -163,7 +163,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 
         if (optionalUsuario.isPresent()) {
 
-            optionalUsuario.get().setEstatus(EstatusUsuarioEnum.ELIMINADO.getEstatus());
+            optionalUsuario.get().setEstatus(Estatus.ELIMINADO.getEstatus());
 
             usuarioRepository.save(optionalUsuario.get());
         }else {

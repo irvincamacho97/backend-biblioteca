@@ -44,11 +44,10 @@ public class UsuarioController extends BaseController{
 
     @PutMapping("/usuario")
     public BaseResponse<String> modificar(@RequestBody UsuarioModificarRequest request) {
-        
         return usuarioService.modificar(request);
     }
 
-    @DeleteMapping("usuario/{idUsuario}")
+    @DeleteMapping("/usuario/{idUsuario}")
     public BaseResponse<String> eliminar(@PathVariable Integer idUsuario) {
         return usuarioService.eliminar(idUsuario);
     }

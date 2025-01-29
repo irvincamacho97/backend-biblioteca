@@ -1,10 +1,7 @@
 package com.model.response;
 
 import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class PaginacionResponse implements Serializable{
 
-    	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 	
 	/** Número de la pagina solicitada **/
 	@JsonProperty("num_pag")
