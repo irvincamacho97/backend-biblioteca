@@ -28,7 +28,6 @@ public class UsuarioMapper {
 		entity.setNombre(request.getNombre());
 		entity.setApellidoPaterno(request.getApellidoPaterno());
 		entity.setApellidoMaterno(request.getApellidoMaterno());
-		entity.setContrasena(request.getContrasena());
 		entity.setCorreo(request.getCorreo());
 
 		return entity;

@@ -14,9 +14,6 @@ public class UsuarioModificarRequest {
 
     @JsonAlias("correo")
     private String correo;
-    
-    @JsonAlias("contrasena")
-    private String contrasena;
 
     @JsonAlias("nombre")
     private String nombre;
