@@ -3,6 +3,7 @@ package com.util.mapper;
 import com.entity.UsuarioEntity;
 import com.model.request.UsuarioModificarRequest;
 import com.model.request.UsuarioRegistroRequest;
+import com.model.response.AutenticacionResponse;
 import com.model.response.UsuarioResponse;
 import com.util.enums.Estatus;
 
@@ -43,6 +44,16 @@ public class UsuarioMapper {
 				.build();
 	}
 	
+	public static AutenticacionResponse mapperToAutenticarResponse(UsuarioEntity entity, String token) {
+		return AutenticacionResponse.builder()
+				.idUsuario(entity.getIdUsuario())
+				.nombre(entity.getNombre())
+				.apellidoPaterno(entity.getApellidoPaterno())
+				.apellidoMaterno(entity.getApellidoMaterno())
+				.correo(entity.getCorreo())
+				.token(token)
+				.build();
+	}
 
 
 }

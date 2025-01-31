@@ -17,10 +17,12 @@ public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Integer>
     @Query("SELECT COUNT(*) FROM UsuarioEntity u WHERE u.correo = :correo")
 	Integer existsByCorreo(@Param("correo") String correo);
 
-    @Query("SELECT u FROM UsuarioEntity u WHERE u.estatus = true")
+    @Query(value="SELECT u FROM UsuarioEntity u WHERE u.estatus = true")
     Page<UsuarioEntity> obtenerListaActivos(Pageable pageable); 
 
     @Query("SELECT u FROM UsuarioEntity u WHERE u.estatus = true AND u.idUsuario = :idUsuario")
     Optional<UsuarioEntity> obtenerUsuarioActivo(Integer idUsuario);
 
+    @Query("SELECT u FROM UsuarioEntity u WHERE u.correo =:correo")
+    Optional<UsuarioEntity> getInfoUsuario(@Param("correo") String correo);
 }
