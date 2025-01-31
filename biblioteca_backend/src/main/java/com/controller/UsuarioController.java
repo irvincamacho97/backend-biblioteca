@@ -1,8 +1,11 @@
 package com.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import com.model.request.AutenticacionRequest;
 import com.model.request.UsuarioModificarRequest;
 import com.model.request.UsuarioRegistroRequest;
+import com.model.response.AutenticacionResponse;
 import com.model.response.BaseResponse;
 import com.model.response.PaginadoResponse;
 import com.model.response.UsuarioResponse;
@@ -51,6 +54,12 @@ public class UsuarioController extends BaseController{
     public BaseResponse<String> eliminar(@PathVariable Integer idUsuario) {
         return usuarioService.eliminar(idUsuario);
     }
+
+    @PostMapping("usuario/autenticar")
+    public BaseResponse<AutenticacionResponse> autenticarUsuario(@RequestBody AutenticacionRequest request) {
+        return usuarioService.autenticarUsuario(request);
+    }
+    
     
 
 }
